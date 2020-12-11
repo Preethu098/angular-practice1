@@ -1,8 +1,8 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
 <h3>
-  <a [title]="product.name+'Details'">
-    {{product.name}}
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
     </a>
   </h3>
 <h4>Price: {{product.price}}</h4>
@@ -14,10 +14,10 @@
   SHARE
   </button>
 
-<app-product-alert
+<app-product-alerts
 [product]="product"
 (notify)="onNotify(product.name)">
-</app-product-alert>
+</app-product-alerts>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
